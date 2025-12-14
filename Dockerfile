@@ -73,9 +73,10 @@ RUN apk add --no-cache \
     rm -rf /tmp/*
 
 # Install Deno - yt-dlp requires a JS runtime as of 2025-11-12
-RUN echo "@edge https://dl-cdn.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
-    echo "@edge https://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories && \
-    apk add --no-cache deno@edge
+RUN apk add --no-cache curl unzip && \
+    curl -fsSL https://deno.land/install.sh | sh && \
+    mv /root/.deno/bin/deno /usr/local/bin/deno && \
+    deno --version
 
 # Install latest yt-dlp directly from GitHub releases (more up-to-date than apk package)
 RUN wget -q https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O /usr/local/bin/yt-dlp && \
