@@ -40,6 +40,8 @@ jobs:
     if: github.event_name == 'push'
     runs-on: ubuntu-22.04
     steps:
+      - name: Clear Docker build cache
+        run: docker builder prune -af
       - name: Checkout
         uses: actions/checkout@v4
       - name: Set up QEMU
