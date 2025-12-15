@@ -28,7 +28,7 @@ Agregarr keeps your Plex Home and Recommended fresh by frequently updating it wi
 ```yaml
 services:
   agregarr:
-    image: agregarr/agregarr:latest
+    image: ghcr.io/mash2k3/agregarr:latest
     container_name: agregarr
     volumes:
       - /path/to/config:/app/config ### Change /path/to/config to your actual config path

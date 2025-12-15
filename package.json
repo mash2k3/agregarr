@@ -250,8 +250,7 @@
           "COMMIT_TAG": "$GIT_SHA"
         },
         "imageNames": [
-          "agregarr/agregarr",
-          "ghcr.io/agregarr/agregarr"
+          "ghcr.io/mash2k3/agregarr"
         ],
         "platforms": [
           "linux/amd64",
