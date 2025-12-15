@@ -73,8 +73,8 @@ RUN apk add --no-cache \
     rm -rf /tmp/*
 
 # Install Deno - yt-dlp requires a JS runtime as of 2025-11-12
-RUN apk add --no-cache curl unzip && \
-    curl -fsSL https://deno.land/install.sh | sh && \
+RUN apk add --no-cache curl unzip bash && \
+    curl -fsSL https://deno.land/install.sh | bash && \
     mv /root/.deno/bin/deno /usr/local/bin/deno && \
     deno --version
 
